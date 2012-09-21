@@ -6,9 +6,9 @@ TEST = ./test
 CPP = g++
 CFLAGS = -Wall -Wextra
 
-all: $(BUILD)/main
+all: $(BUILD)/main_AQ
 	
-$(BUILD)/main: $(SRC)/AQueue/AQueue.cpp
+$(BUILD)/main_AQ: $(SRC)/AQueue/AQueue_test.cpp
 	cd $(SRC); $(MAKE)
 clean:
 	cd $(SRC); $(MAKE) clean
