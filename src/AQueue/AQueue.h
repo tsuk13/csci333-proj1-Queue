@@ -4,7 +4,10 @@
 class AQueue {
   private:
     int currentSize;
-    int testItem;
+    int* queue;
+    int front;
+    int back;
+    int numElements;
 
   public:
     AQueue(int initialSize = 10);
