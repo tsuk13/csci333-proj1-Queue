@@ -22,7 +22,7 @@ int AQueue::dequeue(){
   cout << "Deqeueu Called\n";
   assert(numElements>0);  //check to make sure the queue is not empty
   int tmp = queue[front];
-  front++; //Modify for ribbon array
+  front = (front + 1) % currentSize ;
   numElements--;
   return tmp;
 }
@@ -31,7 +31,7 @@ void AQueue::enqueue(int a){
   cout << "Enqueue Called\n";
   assert(numElements < currentSize); //check to make sure queue is not full
   queue[back] = a;
-  back++; //Modify for ribbon array
+  back = (back + 1) % currentSize; //Modify for ribbon array
   numElements++;
 }
 
