@@ -8,9 +8,10 @@ class AQueue {
     int front;
     int back;
     int numElements;
+    int initialSize;
 
   public:
-    AQueue(int initialSize = 10);
+    AQueue(int size = 10);
     ~AQueue();
     int dequeue();
     void enqueue(int a);

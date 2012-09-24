@@ -4,8 +4,9 @@
 
 using std::cout;
 
-AQueue::AQueue(int initialSize) {
-  currentSize=initialSize;
+AQueue::AQueue(int size) {
+  currentSize = size;
+  initialSize = size;
   numElements = 0;
   front = 0;
   back = 0;
@@ -17,10 +18,22 @@ AQueue::~AQueue(){
 }
 
 int AQueue::dequeue(){
+  if(numElements < currentSize / 4 && currentSize / 2 >= initialSize){
+    int* tmp = new int[currentSize / 2];
+    for(int i = 0; i < numElements; i++){
+     tmp[i] = queue[(front + i)%currentSize];
+    }
+    front = 0;
+    back = numElements;
+    currentSize = currentSize / 2;
+    delete[] queue;
+    queue = tmp;
+  }
   assert(numElements>0);  //check to make sure the queue is not empty
   int tmp = queue[front];
   front = (front + 1) % currentSize ;
   numElements--;
+  std::cout << "currentSize: " << currentSize << "\n";
   return tmp;
 }
 
