@@ -5,6 +5,7 @@
 using std::cout;
 
 AQueue::AQueue(int size) {
+  assert(size > 0);
   currentSize = size;
   initialSize = size;
   numElements = 0;
