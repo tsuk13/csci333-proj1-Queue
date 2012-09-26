@@ -34,7 +34,6 @@ int Queue::dequeue(){
   int tmp = queue[front];
   front = (front + 1) % currentSize ;
   numElements--;
-  std::cout << "currentSize: " << currentSize << "\n";
   return tmp;
 }
 
@@ -54,7 +53,6 @@ void Queue::enqueue(int a){
   queue[back] = a;
   back = (back + 1) % currentSize;
   numElements++;
-  std::cout << "currentsize: " << currentSize << "\n";
 }
 
 int Queue::size(){
