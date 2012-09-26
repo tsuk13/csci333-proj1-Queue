@@ -1,9 +1,9 @@
 #include <iostream>
-#include "AQueue.h"
+#include "Queue.h"
 
 int main(){
   std::cout << "Hello World!!!!\n";
-  AQueue* q = new AQueue();
+  Queue* q = new Queue();
    for(int i = 0; i < 50; i++){
     q->enqueue(i);
   }

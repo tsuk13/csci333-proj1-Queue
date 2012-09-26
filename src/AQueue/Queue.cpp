@@ -1,10 +1,10 @@
-#include "AQueue.h"
+#include "Queue.h"
 #include <iostream>
 #include <cassert>
 
 using std::cout;
 
-AQueue::AQueue(int size) {
+Queue::Queue(int size) {
   assert(size > 0);
   currentSize = size;
   initialSize = size;
@@ -14,11 +14,11 @@ AQueue::AQueue(int size) {
   queue = new int[currentSize];
 }
 
-AQueue::~AQueue(){
+Queue::~Queue(){
   delete[] queue;
 }
 
-int AQueue::dequeue(){
+int Queue::dequeue(){
   if(numElements < currentSize / 4 && currentSize / 2 >= initialSize){
     int* tmp = new int[currentSize / 2];
     for(int i = 0; i < numElements; i++){
@@ -38,7 +38,7 @@ int AQueue::dequeue(){
   return tmp;
 }
 
-void AQueue::enqueue(int a){
+void Queue::enqueue(int a){
   if(numElements >= currentSize){
     int* tmp = new int[currentSize*2];
     for(int i = 0; i < numElements; i++){
@@ -57,10 +57,10 @@ void AQueue::enqueue(int a){
   std::cout << "currentsize: " << currentSize << "\n";
 }
 
-int AQueue::size(){
+int Queue::size(){
   return numElements;
 }
 
-bool AQueue::isEmpty(){
+bool Queue::isEmpty(){
   return (numElements == 0);
 }  

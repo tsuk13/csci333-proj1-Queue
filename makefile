@@ -8,7 +8,7 @@ CFLAGS = -Wall -Wextra
 
 all: $(BUILD)/main_AQ
 	
-$(BUILD)/main_AQ: $(SRC)/AQueue/AQueue_test.cpp $(SRC)/AQueue/AQueue.cpp $(SRC)/AQueue/AQueue.h
+$(BUILD)/main_AQ: $(SRC)/AQueue/Queue_test.cpp $(SRC)/AQueue/Queue.cpp $(SRC)/AQueue/Queue.h
 	cd $(SRC); $(MAKE)
 clean:
 	cd $(SRC); $(MAKE) clean

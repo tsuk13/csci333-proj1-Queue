@@ -1,7 +1,7 @@
-#ifndef __AQUEUE_H__
-#define __AQUEUE_H__
+#ifndef __QUEUE_H__
+#define __QUEUE_H__
 
-class AQueue {
+class Queue {
   private:
     int currentSize;
     int* queue;
@@ -11,8 +11,8 @@ class AQueue {
     int initialSize;
 
   public:
-    AQueue(int size = 10);
-    ~AQueue();
+    Queue(int size = 10);
+    ~Queue();
     int dequeue();
     void enqueue(int a);
     int size();
