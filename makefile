@@ -20,5 +20,11 @@ $(BUILD)/main_LLQ: $(SRC)/LLQueue/Queue_test.cpp $(SRC)/LLQueue/Queue.cpp $(SRC)
 $(TEST)/AQueue_test: $(TEST)/AQueue_test.cpp $(SRC)/AQueue/Queue.o
 	cd $(TEST); $(MAKE)
 
+$(TEST)/LQueue_test: $(TEST)/LQueue_test.cpp $(SRC)/LQueue/Queue.o
+	cd $(TEST); $(MAKE)
+
+$(TEST)/LLQueue_test: $(TEST)/LLQueue_test.cpp $(SRC)/LLQueue/Queue.o $(SRC)/LLQueue/Node.o
+	cd $(TEST); $(MAKE)
 clean:
 	rm build/*; cd $(SRC); $(MAKE) clean
+	cd $(TEST); $(MAKE) clean

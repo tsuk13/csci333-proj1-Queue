@@ -26,5 +26,7 @@ $(GTEST_MAINA): $(GTEST)/src/*.cc $(GTEST)/src/*.h
 
 clean:
 	rm -f AQueue_test
+	rm -f LQueue_test
+	rm -f LLQueue_test
 	rm -f $(GTEST_MAINA)
 	cd $(GTEST)/make; $(MAKE) clean
