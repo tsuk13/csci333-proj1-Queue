@@ -6,16 +6,19 @@ TEST = ./test
 CPP = g++
 CFLAGS = -Wall -Wextra
 
-all: $(BUILD)/main_AQ $(BUILD)/main_LQ $(BUILD)/main_LLQ
+all: $(BUILD)/main_AQ $(BUILD)/main_LQ $(BUILD)/main_LLQ $(TEST)/AQueue_test
 	
 $(BUILD)/main_AQ: $(SRC)/AQueue/Queue_test.cpp $(SRC)/AQueue/Queue.cpp $(SRC)/AQueue/Queue.h
 	cd $(SRC); $(MAKE)
 
 $(BUILD)/main_LQ: $(SRC)/LQueue/Queue_test.cpp $(SRC)/LQueue/Queue.cpp $(SRC)/LQueue/Queue.h
-	cd $(SRC): $(MAKE)
+	cd $(SRC); $(MAKE)
 
 $(BUILD)/main_LLQ: $(SRC)/LLQueue/Queue_test.cpp $(SRC)/LLQueue/Queue.cpp $(SRC)/LLQueue/Queue.h
-	cd $(SRC): $(MAKE)
+	cd $(SRC); $(MAKE)
+
+$(TEST)/AQueue_test: $(TEST)/AQueue_test.cpp $(SRC)/AQueue/Queue.o
+	cd $(TEST); $(MAKE)
 
 clean:
 	rm build/*; cd $(SRC); $(MAKE) clean
