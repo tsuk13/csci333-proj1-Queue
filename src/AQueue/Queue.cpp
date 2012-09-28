@@ -1,8 +1,6 @@
 #include "Queue.h"
 #include <cassert>
 
-using std::cout;
-
 Queue::Queue(int size) {
   assert(size > 0);
   currentSize = size;

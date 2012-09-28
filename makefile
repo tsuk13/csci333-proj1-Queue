@@ -6,7 +6,7 @@ TEST = ./test
 CPP = g++
 CFLAGS = -Wall -Wextra
 
-all: $(BUILD)/main_AQ $(BUILD)/main_LQ $(BUILD)/main_LLQ $(TEST)/AQueue_test
+all: $(BUILD)/main_AQ $(BUILD)/main_LQ $(BUILD)/main_LLQ $(TEST)/AQueue_test $(TEST)/LQueue_test $(TEST)/LLQueue_test
 	
 $(BUILD)/main_AQ: $(SRC)/AQueue/Queue_test.cpp $(SRC)/AQueue/Queue.cpp $(SRC)/AQueue/Queue.h
 	cd $(SRC); $(MAKE)
