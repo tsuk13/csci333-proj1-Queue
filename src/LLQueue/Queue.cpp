@@ -1,6 +1,5 @@
 #include "Node.h"
 #include "Queue.h"
-#include <iostream>
 #include <cassert>
 
 Queue::Queue(){

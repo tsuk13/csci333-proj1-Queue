@@ -1,5 +1,4 @@
 #include "Queue.h"
-#include <iostream>
 #include <cassert>
 
 using std::cout;
